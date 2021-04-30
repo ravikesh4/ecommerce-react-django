@@ -1,10 +1,8 @@
 from django.urls import path
 from base.views import user_views as views
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-)
 
-urlpatterns  = [
+
+urlpatterns = [
     path('login/', views.MyTokenObtainPairView.as_view(),
          name='token_obtain_pair'),
 
@@ -19,7 +17,4 @@ urlpatterns  = [
     path('update/<str:pk>/', views.updateUser, name='user-update'),
 
     path('delete/<str:pk>/', views.deleteUser, name='user-delete'),
-    
 ]
-
-
